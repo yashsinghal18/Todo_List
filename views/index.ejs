@@ -1,0 +1,22 @@
+<%- include("./partials/header") %>
+<nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand d-flex justify-content-center w-100" href="/">Todo App</a>
+</nav>
+<div class="container mt-5">
+    <form action="/add/todo" method="POST" class="d-flex">
+        <input type="text" name="todo" class="form-control" placeholder="Enter Todo" autocomplete="off">
+        <input type="date" name="dueDate" class="form-control" placeholder="Enter due-date">
+        <input type="submit" value="Add Todo" class="btn btn-md btn-primary mx-2">
+    </form>
+</div>
+<nav>
+    <a class="row justify-content-md-center mt-5" href="/alltodo">Show all To-Do</a>
+    <div class="container mt-5">
+    <form action="/todos-on-date" method="GET" class="d-flex">
+        <input type="date" name="todo-dueDate" class="form-control mt-3" placeholder="Enter due-date">
+        <input type="submit" value="Show Todos for Entered Date" class="btn btn-md btn-primary mt-3">
+    </form>
+    </div>
+</nav>
+
+<%- include("./partials/footer") %>

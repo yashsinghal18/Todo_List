@@ -1,0 +1,20 @@
+<%- include("./partials/header") %>
+<nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand d-flex justify-content-center w-100" href="/">Todo App</a>
+</nav>
+
+<div class="container mt-5">
+    <h2>Tasks Due on <%= dueDate%></h2>
+    <ul class="list-group my-5">
+        <% tasks.forEach(task => { %>
+            <li class="list-group-item">
+                <div class="d-flex justify-content-between">
+                    <span><%= task.todo %></span>
+                    <span><%= task.dueDate.toDateString() %></span>
+                </div>
+            </li>
+        <% }) %>
+    </ul>
+</div>
+
+<%- include("./partials/footer") %>

@@ -1,0 +1,26 @@
+<%- include("./partials/header") %>
+<nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand" href="/">Todo</a>
+</nav>
+
+<div class="container mt-5">
+    <ul class="list-group my-5">
+        <% 
+            todo.sort((a, b) => new Date(a.dueDate) - new Date(b.dueDate));
+
+            todo.forEach(todos => { %>
+                <li class="list-group-item">
+                    <div class="d-flex justify-content-between">
+                        <span><%= todos.todo %></span>
+                        <span class="ml-3"><%= todos.dueDate.toDateString() %></span>
+                    </div>
+                    <div class="mt-2">
+                        <a href="/delete/todo/<%= todos._id %>" class="btn btn-danger btn-sm">Delete</a>
+                        <a href="/edit/todo/<%= todos._id %>" class="btn btn-primary btn-sm">Update</a>
+                    </div>
+                </li>
+        <% }) %>
+    </ul>
+</div>
+
+<%- include("./partials/footer") %>
